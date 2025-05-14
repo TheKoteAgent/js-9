@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погодний віджет</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Погодний віджет</h1>
+      <form id="weatherForm">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Введіть назву міста"
+          required
+        />
+        <button type="submit">Пошук</button>
+      </form>
+
+      <div class="unit-toggle">
+        <label>
+          <input type="radio" name="unit" value="celsius" checked /> °C
+        </label>
+        <label>
+          <input type="radio" name="unit" value="fahrenheit" /> °F
+        </label>
+      </div>
+
+      <div id="loader" class="loader hidden"></div>
+
+      <div id="weatherInfo" class="weather-info hidden">
+        <div class="weather-main">
+          <img id="weatherIcon" alt="Погодна іконка" />
+          <div class="temperature">
+            <span id="temperature"></span>
+            <span id="description"></span>
+          </div>
+        </div>
+        <div class="weather-details">
+          <div class="detail">
+            <span class="label">Вологість:</span>
+            <span id="humidity"></span>
+          </div>
+          <div class="detail">
+            <span class="label">Швидкість вітру:</span>
+            <span id="windSpeed"></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="errorMessage" class="error hidden"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
